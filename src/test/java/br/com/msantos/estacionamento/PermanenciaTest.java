@@ -15,20 +15,16 @@ public class PermanenciaTest {
 	private LocalDateTime saida;
 	private Permanencia permanenciaCalculada;
 	
-	private Veiculo veiculo;
-
 	@Before
 	public void setValores() {
 		entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 30);
 		saida = LocalDateTime.of(2019, Month.APRIL, 20, 11, 30);
-		
-		veiculo = new Veiculo("GTP-5696", "Paulo", TipoVeiculo.CARRO);
 	}
 
 	@Test
 	public void deveCalcularAPermanenciaEntreDoisHorarios() {
 
-		permanenciaCalculada = new Permanencia(entrada, saida, veiculo);
+		permanenciaCalculada = new Permanencia(entrada, saida);
 
 		Duration permanenciaEsperada = Duration.ofMinutes(120);
 
@@ -38,7 +34,7 @@ public class PermanenciaTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void deveLancarUmaExcessaoQuandoUmDosValoresForemIguaisANull() {
 
-		permanenciaCalculada = new Permanencia(entrada, null, veiculo);
+		permanenciaCalculada = new Permanencia(entrada, null);
 
 		permanenciaCalculada.getPermanencia();
 	}

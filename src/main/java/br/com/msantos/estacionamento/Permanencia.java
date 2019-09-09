@@ -12,18 +12,15 @@ public class Permanencia {
 
 	private Duration permanencia;
 
-	private Veiculo veiculo;
-
-	public Permanencia(LocalDateTime entrada, LocalDateTime saida, Veiculo veiculo) {
+	public Permanencia(LocalDateTime entrada, LocalDateTime saida) {
 		this.entrada = entrada;
 		this.saida = saida;
-		this.veiculo = veiculo;
+
+		if (entrada == null || saida == null) {
+			throw new IllegalArgumentException("Os valores de entrada e de saída devem ser setados");
+		}
 		
 		calculaPermanencia();
-	}
-	
-	public Veiculo getVeiculo() {
-		return veiculo;
 	}
 
 	public LocalDateTime getEntrada() {
@@ -37,11 +34,9 @@ public class Permanencia {
 	public Duration getPermanencia() {
 		return permanencia;
 	}
-	
+
 	private void calculaPermanencia() {
-		if (entrada == null || saida == null) {
-			throw new IllegalArgumentException("Os valores de entrada e de saída devem ser setados");
-		}
+		
 		permanencia = Duration.between(entrada, saida);
 	}
 

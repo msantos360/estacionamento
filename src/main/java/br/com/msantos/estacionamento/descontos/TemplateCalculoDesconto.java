@@ -8,14 +8,15 @@ import org.javamoney.moneta.function.MonetaryOperators;
 
 import br.com.msantos.estacionamento.Permanencia;
 import br.com.msantos.estacionamento.TipoVeiculo;
+import br.com.msantos.estacionamento.Veiculo;
 
 public abstract class TemplateCalculoDesconto {
 
 	private TipoVeiculo tipoVeiculo;
 
-	protected Money calcula(Permanencia permanencia, BigDecimal desconto) {
+	protected Money calcula(Permanencia permanencia, BigDecimal desconto, Veiculo veiculo) {
 
-		this.tipoVeiculo = permanencia.getVeiculo().getTipoVeiculo();
+		this.tipoVeiculo = veiculo.getTipoVeiculo();
 
 		Money valorFixadoHora = Money.of(PrecosDescontos.VALOR_FIXADO_HORA, PrecosDescontos.MOEDA_BRASILEIRA);
 		

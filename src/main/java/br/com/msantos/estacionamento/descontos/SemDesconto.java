@@ -5,10 +5,11 @@ import java.math.BigDecimal;
 import org.javamoney.moneta.Money;
 
 import br.com.msantos.estacionamento.Permanencia;
+import br.com.msantos.estacionamento.Veiculo;
 
 public class SemDesconto implements Desconto {
 
-	public Money desconta(Permanencia permanencia) {
+	public Money desconta(Permanencia permanencia, Veiculo veiculo) {
 		return Money.of(BigDecimal.ZERO, PrecosDescontos.MOEDA_BRASILEIRA);
 	}
 

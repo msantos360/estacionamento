@@ -44,11 +44,11 @@ public class CalculadorDescontosTest {
 		LocalDateTime entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 00);
 		LocalDateTime saida = LocalDateTime.of(2019, Month.APRIL, 20, 9, 10);
 		
-		new Veiculo("GTP-5696", "Paulo", TipoVeiculo.MOTO);
+		permanencia = new Permanencia(entrada, saida);
+		
+		Veiculo veiculo = new Veiculo("XPT-2211", "Paulo", TipoVeiculo.MOTO);
 
-		permanencia = new Permanencia(entrada, saida, new Veiculo("KOI-2698", "Paulo", TipoVeiculo.MOTO));
-
-		assertEquals(valorEsperadoTolerancia, new CalculadorDescontos().calcula(permanencia));
+		assertEquals(valorEsperadoTolerancia, new CalculadorDescontos().calcula(permanencia, veiculo));
 	}
 	
 	@Test
@@ -57,9 +57,11 @@ public class CalculadorDescontosTest {
 		LocalDateTime entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 00);
 		LocalDateTime saida = LocalDateTime.of(2019, Month.APRIL, 20, 10, 00);
 
-		permanencia = new Permanencia(entrada, saida, new Veiculo("KOI-2698", "Paulo", TipoVeiculo.CARRO));
+		permanencia = new Permanencia(entrada, saida);
 		
-		assertEquals(valorEsperadoPrimeiraHora, new CalculadorDescontos().calcula(permanencia));
+		Veiculo veiculo = new Veiculo("XPT-2211", "Paulo", TipoVeiculo.CARRO);
+		
+		assertEquals(valorEsperadoPrimeiraHora, new CalculadorDescontos().calcula(permanencia, veiculo));
 		
 	}
 	
@@ -69,9 +71,11 @@ public class CalculadorDescontosTest {
 		LocalDateTime entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 00);
 		LocalDateTime saida = LocalDateTime.of(2019, Month.APRIL, 20, 11, 00);
 
-		permanencia = new Permanencia(entrada, saida, new Veiculo("KOI-2698", "Paulo", TipoVeiculo.MOTO));
+		permanencia = new Permanencia(entrada, saida);
+		
+		Veiculo veiculo = new Veiculo("XPT-2211", "Paulo", TipoVeiculo.MOTO);
 
-		assertEquals(valorEsperadoSegundaHora, new CalculadorDescontos().calcula(permanencia));
+		assertEquals(valorEsperadoSegundaHora, new CalculadorDescontos().calcula(permanencia, veiculo));
 		
 	}
 	
@@ -81,9 +85,11 @@ public class CalculadorDescontosTest {
 		LocalDateTime entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 00);
 		LocalDateTime saida = LocalDateTime.of(2019, Month.APRIL, 20, 12, 00);
 
-		permanencia = new Permanencia(entrada, saida, new Veiculo("KOI-2698", "Paulo", TipoVeiculo.CARRO));
+		permanencia = new Permanencia(entrada, saida);
+		
+		Veiculo veiculo = new Veiculo("XPT-2211", "Paulo", TipoVeiculo.CARRO);
 
-		assertEquals(valorEsperadoTerceiraHora, new CalculadorDescontos().calcula(permanencia));
+		assertEquals(valorEsperadoTerceiraHora, new CalculadorDescontos().calcula(permanencia, veiculo));
 		
 	}
 	
@@ -93,9 +99,11 @@ public class CalculadorDescontosTest {
 		LocalDateTime entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 00);
 		LocalDateTime saida = LocalDateTime.of(2019, Month.APRIL, 20, 12, 00);
 
-		permanencia = new Permanencia(entrada, saida, new Veiculo("KOI-2698", "Paulo", TipoVeiculo.SUV));
+		permanencia = new Permanencia(entrada, saida);
+		
+		Veiculo veiculo = new Veiculo("XPT-2211", "Paulo", TipoVeiculo.SUV);
 
-		assertEquals(valorEsperadoTerceiraHoraSuv, new CalculadorDescontos().calcula(permanencia));
+		assertEquals(valorEsperadoTerceiraHoraSuv, new CalculadorDescontos().calcula(permanencia, veiculo));
 		
 	}
 	
@@ -105,9 +113,11 @@ public class CalculadorDescontosTest {
 		LocalDateTime entrada = LocalDateTime.of(2019, Month.APRIL, 20, 9, 00);
 		LocalDateTime saida = LocalDateTime.of(2019, Month.APRIL, 20, 12, 00);
 
-		permanencia = new Permanencia(entrada, saida, new Veiculo("KOI-2698", "Paulo", TipoVeiculo.CAMINHAO));
+		permanencia = new Permanencia(entrada, saida);
+		
+		Veiculo veiculo = new Veiculo("XPT-2211", "Paulo", TipoVeiculo.CAMINHAO);
 
-		assertEquals(valorEsperadoTerceiraHoraCaminhao, new CalculadorDescontos().calcula(permanencia));
+		assertEquals(valorEsperadoTerceiraHoraCaminhao, new CalculadorDescontos().calcula(permanencia, veiculo));
 		
 	}
 
