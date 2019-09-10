@@ -17,7 +17,7 @@ public class Permanencia {
 		this.saida = saida;
 
 		if (entrada == null || saida == null) {
-			throw new IllegalArgumentException("Os valores de entrada e de saída devem ser setados");
+			throw new NullPointerException("Os valores de entrada e de saída devem ser setados");
 		}
 		
 		calculaPermanencia();

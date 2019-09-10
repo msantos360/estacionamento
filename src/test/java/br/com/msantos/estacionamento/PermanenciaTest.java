@@ -12,7 +12,9 @@ import org.junit.Test;
 public class PermanenciaTest {
 
 	private LocalDateTime entrada;
+	
 	private LocalDateTime saida;
+	
 	private Permanencia permanenciaCalculada;
 	
 	@Before
@@ -31,7 +33,7 @@ public class PermanenciaTest {
 		assertEquals(permanenciaEsperada, permanenciaCalculada.getPermanencia());
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = NullPointerException.class)
 	public void deveLancarUmaExcessaoQuandoUmDosValoresForemIguaisANull() {
 
 		permanenciaCalculada = new Permanencia(entrada, null);

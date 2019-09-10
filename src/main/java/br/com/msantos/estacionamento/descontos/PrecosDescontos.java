@@ -27,13 +27,5 @@ public abstract class PrecosDescontos {
 	public static final BigDecimal DESCONTO_QUINTA_HORA = BigDecimal.valueOf(-15);
 
 	public static final BigDecimal DESCONTO_SEXTA_HORA = BigDecimal.valueOf(-20);
-	
-	//Definições dos descontos ou acréscimos por tipo de veículo
-	public static final BigDecimal DESCONTO_MOTO = BigDecimal.valueOf(-50);
-	
-	public static final BigDecimal DESCONTO_CARRO = BigDecimal.ZERO;
-	
-	public static final BigDecimal ACRESCIMO_SUV = BigDecimal.valueOf(50);
-	
-	public static final BigDecimal ACRESIMO_CAMINHAO = BigDecimal.valueOf(100);
+
 }

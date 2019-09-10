@@ -7,7 +7,9 @@ import br.com.msantos.estacionamento.descontos.CalculadorDescontos;
 public class App {
 
 	private Veiculo veiculo;
+	
 	private Permanencia permanencia;
+	
 	private BigDecimal totalAPagar;
 
 	public App(Veiculo veiculo, Permanencia permanencia) {
@@ -16,7 +18,7 @@ public class App {
 		this.permanencia = permanencia;
 
 		if (veiculo == null | permanencia == null) {
-			throw new IllegalArgumentException("Veiculo e Permanencia são requeridos.");
+			throw new NullPointerException("Veiculo e Permanencia são requeridos.");
 		}
 
 		calculaValor();

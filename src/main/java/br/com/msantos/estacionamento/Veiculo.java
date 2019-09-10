@@ -12,6 +12,10 @@ public class Veiculo {
 		this.placa = placa;
 		this.cliente = cliente;
 		this.tipoVeiculo = tipoVeiculo;
+		
+		if (tipoVeiculo.equals(null)) {
+			throw new NullPointerException("Tipo de veiculo não foi definido.");
+		}
 	}
 
 	public String getPlaca() {
